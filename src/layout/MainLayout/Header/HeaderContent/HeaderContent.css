@@ -1,0 +1,28 @@
+#artist-name-container {
+  text-align: center;
+  width: 145px;
+  margin: 0 auto;
+}
+
+#artist-name-container h2 {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  margin: 0px;
+}
+
+#brush-strokes-icon {
+  width: 28px;
+}
+
+#artist-name-container-left {
+  color: white;
+  margin: 0 auto;
+}
+
+#artist-name-container-left h2 {
+  color: white;
+  font-size: 24px;
+  text-align: left;
+  margin: 0px;
+}

@@ -1,0 +1,99 @@
+#home-overlay {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+#home-header-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  color: white;
+}
+
+#home-header-container h1 {
+  color: white;
+  font-size: 68px;
+}
+
+#home-main-box-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.date-line {
+  height: 40px;
+  padding: 10px;
+  border-bottom: 1px solid white;
+}
+
+#home-main-box {
+  position: relative;
+  height: 350px;
+  width: 350px;
+  background-color: rgb(0, 0, 0);
+  padding: 1px;
+}
+
+#home-main-box #past-dates {
+  top: 1px;
+  left: 1px;
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  opacity: 0.9;
+  background-color: rgb(0, 0, 0);
+  background: linear-gradient(160deg, rgb(8 23 53) 0%, rgb(0 0 0) 91%);
+  padding: 6px;
+  position: absolute;
+  color: white;
+}
+
+#home-main-box img {
+  width: 100%;
+}
+
+#shapes-container {
+  position: absolute;
+  right: 0px;
+  top: 200px;
+  width: 40%;
+}
+
+#shapes-left-container {
+  position: absolute;
+  left: -38px;
+  top: 200px;
+  width: 40%;
+}
+
+@media screen and (min-width: 600px) {
+  #shapes-container {
+    top: 140px;
+  }
+
+  #shapes-left-container {
+    top: 140px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #shapes-container {
+    top: 100px;
+  }
+
+  #shapes-left-container {
+    top: 100px;
+  }
+}
+
+@media screen and (min-width: 1320px) {
+  #shapes-container {
+    top: 0px;
+  }
+
+  #shapes-left-container {
+    top: 0px;
+  }
+}
