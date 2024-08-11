@@ -24,20 +24,28 @@
 }
 
 .date-line {
-  height: 40px;
+  min-height: 40px;
   padding: 10px;
   border-bottom: 1px solid white;
 }
 
 #home-main-box {
   position: relative;
-  height: 350px;
+  height: 466px;
   width: 350px;
   background-color: rgb(0, 0, 0);
   padding: 1px;
 }
 
+#home-main-box #dates h3 {
+  text-align: center;
+}
+
 #home-main-box #past-dates {
+  margin-top: 50px;
+}
+
+#home-main-box #dates {
   top: 1px;
   left: 1px;
   height: calc(100% - 2px);

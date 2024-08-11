@@ -7,6 +7,8 @@ import './HomeOverlay.css';
 import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
+let upcomingDates = ['The Sanctuary Pub (Iowa City, IA) - 08/24/2024 (8pm - 10pm)'];
+
 let pastDates = [
   'The Sanctuary Pub (Iowa City, IA) - 02/17/2024',
   'Brick Alley Pub (Marion, IA) - 12/29/2023',
@@ -27,8 +29,14 @@ const HomeOverlay = () => {
           </div>
           <div id="home-main-box-container">
             <div id="home-main-box">
-              {/* <img src={SomethingNewImage} alt="Something New" /> */}
-              <div id="past-dates">
+              <div id="dates">
+                <h3>Upcoming Dates</h3>
+                {upcomingDates.map((item, index) => (
+                  <div className="date-line" key={index}>
+                    {item}
+                  </div>
+                ))}
+                <h3 id="past-dates">Past Dates</h3>
                 {pastDates.map((item, index) => (
                   <div className="date-line" key={index}>
                     {item}
