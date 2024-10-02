@@ -26,14 +26,14 @@ const pages = {
       url: '/home',
       icon: icons.HomeOutlined,
       breadcrumbs: false
+    },
+    {
+      id: 'music',
+      title: 'Music',
+      type: 'item',
+      url: '/music',
+      icon: icons.MusicNoteIcon
     }
-    // {
-    //   id: 'music',
-    //   title: 'Music',
-    //   type: 'item',
-    //   url: '/music',
-    //   icon: icons.MusicNoteIcon
-    // },
     // {
     //   id: 'dates',
     //   title: 'Dates',

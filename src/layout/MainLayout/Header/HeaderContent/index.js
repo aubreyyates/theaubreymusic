@@ -25,10 +25,10 @@ const HeaderContent = () => {
             <Button component={LinkReact} to="home">
               Home
             </Button>
-            {/* <Button component={LinkReact} to="music">
+            <Button component={LinkReact} to="music">
               Music
             </Button>
-            <Button component={LinkReact} to="dates">
+            {/* <Button component={LinkReact} to="dates">
               Dates
             </Button> */}
           </Grid>

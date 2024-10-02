@@ -5,6 +5,9 @@ import VerticalBars from 'components/VerticalBars';
 import './Dates.css';
 
 let pastDates = [
+  'The Sanctuary Pub (Iowa City, IA) - 09/28/2024',
+  'The Sanctuary Pub (Iowa City, IA) - 09/14/2024',
+  'The Sanctuary Pub (Iowa City, IA) - 08/24/2024',
   'The Sanctuary Pub (Iowa City, IA) - 02/17/2024',
   'Brick Alley Pub (Marion, IA) - 12/29/2023',
   'Gabes (Iowa City, IA) - 12/22/2023',
