@@ -7,9 +7,14 @@ import './HomeOverlay.css';
 import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
-let upcomingDates = [`Short's Burger Eastside (Iowa City, IA) - 10/05/2024 (7 pm - 8:30 pm)`];
+let upcomingDates = [
+  `The Sanctuary Pub (Iowa City, IA) - 11/01/2024 (8pm - 10pm)`,
+  'Willow Creek Theatre (Iowa City, IA) - 11/09/2024 (9pm - 11pm)',
+  `Short's Burger Eastside (Iowa City, IA) - 11/16/2024 (7pm - 8:30pm)`
+];
 
 let pastDates = [
+  `Short's Burger Eastside (Iowa City, IA) - 10/05/2024`,
   'The Sanctuary Pub (Iowa City, IA) - 09/28/2024',
   'The Sanctuary Pub (Iowa City, IA) - 09/14/2024',
   'The Sanctuary Pub (Iowa City, IA) - 08/24/2024',
