@@ -7,7 +7,7 @@ import './HomeOverlay.css';
 import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
-let upcomingDates = ['None at the moment! Check back later!'];
+let upcomingDates = [`Short's Burger Eastside (Iowa City, IA) - 02/08/2025 7:00 PM - 8:30 PM`];
 
 let pastDates = [
   `Short's Burger Eastside (Iowa City, IA) - 11/16/2024`,
