@@ -7,12 +7,10 @@ import './HomeOverlay.css';
 import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
-let upcomingDates = [
-  `Trumpet Blossom (Iowa City, IA) - 03/01/2025 (TBD Time)`,
-  `Willow Creek Theatre (Iowa City, IA) - 02/21/2025 7:30PM - 9:30PM`
-];
+let upcomingDates = [`Trumpet Blossom (Iowa City, IA) - 03/01/2025 (8:30 PM)`];
 
 let pastDates = [
+  `Willow Creek Theatre (Iowa City, IA) - 02/21/2025`,
   `Short's Burger Eastside (Iowa City, IA) - 02/08/2025`,
   `Short's Burger Eastside (Iowa City, IA) - 11/16/2024`,
   'Willow Creek Theatre (Iowa City, IA) - 11/09/2024',
