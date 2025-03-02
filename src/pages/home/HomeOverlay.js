@@ -7,9 +7,10 @@ import './HomeOverlay.css';
 import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
-let upcomingDates = [`Trumpet Blossom (Iowa City, IA) - 03/01/2025 (8:30 PM)`];
+let upcomingDates = [`None at the moment. Check back later!`];
 
 let pastDates = [
+  `Trumpet Blossom (Iowa City, IA) - 03/01/2025`,
   `Willow Creek Theatre (Iowa City, IA) - 02/21/2025`,
   `Short's Burger Eastside (Iowa City, IA) - 02/08/2025`,
   `Short's Burger Eastside (Iowa City, IA) - 11/16/2024`,
