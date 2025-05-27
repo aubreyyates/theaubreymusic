@@ -8,10 +8,12 @@ import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
 let upcomingDates = [
-  { text: `Short's Burger Eastside (Iowa City, IA) - 05/10/2025 6:30PM - 8:00PM`, link: `https://www.facebook.com/shortseastside/` }
+  { text: `Elray's Live and Dive (Iowa, City, IA) 8:00PM - 9:30PM`, link: `https://www.elraysliveanddive.com/` },
+  { text: `Willow Creek Theatre (Iowa City, IA) - 05/31/2025 9:00PM`, link: `http://willowcreektheatre.org/` }
 ];
 
 let pastDates = [
+  `Short's Burger Eastside (Iowa City, IA) - 05/10/2025`,
   `Trumpet Blossom (Iowa City, IA) - 03/01/2025`,
   `Willow Creek Theatre (Iowa City, IA) - 02/21/2025`,
   `Short's Burger Eastside (Iowa City, IA) - 02/08/2025`,
