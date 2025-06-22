@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <Grid>
       <div id="home-container">
-        <Grid style={{ height: '1200px', position: 'relative' }}>
+        <Grid style={{ height: '1240px', position: 'relative' }}>
           <HomeOverlay></HomeOverlay>
         </Grid>
       </div>
