@@ -7,11 +7,10 @@ import './HomeOverlay.css';
 import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
-let upcomingDates = [
-  { text: `Elray's Live and Dive (Iowa, City, IA) 06/14/2025 8:00PM - 9:30PM`, link: `https://www.elraysliveanddive.com/` }
-];
+let upcomingDates = [{ text: `Gabe's (Jam Opener) (Iowa City, IA) 07/01/2025 8:00PM - 8:30PM`, link: `https://www.icgabes.com/` }];
 
 let pastDates = [
+  `Elray's Live and Dive (Iowa, City, IA) 06/14/2025`,
   `Willow Creek Theatre (Iowa City, IA) - 05/31/2025`,
   `Short's Burger Eastside (Iowa City, IA) - 05/10/2025`,
   `Trumpet Blossom (Iowa City, IA) - 03/01/2025`,
