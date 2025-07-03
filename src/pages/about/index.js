@@ -10,9 +10,9 @@ import AboutOverlay from './AboutOverlay';
 const About = () => {
   return (
     <Grid>
-      <Grid style={{ height: '800px', position: 'relative' }}>
+      <Grid style={{ height: '1200px', position: 'relative' }}>
         <div id="about-container">
-          <Grid style={{ height: '800px', position: 'relative' }}>
+          <Grid style={{ height: '1200px', position: 'relative' }}>
             <AboutOverlay></AboutOverlay>
           </Grid>
         </div>
