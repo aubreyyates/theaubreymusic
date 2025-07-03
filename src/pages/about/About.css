@@ -1,0 +1,135 @@
+#about-container {
+  position: relative;
+  z-index: 1;
+  /* background-color: rgb(5, 5, 6); */
+  /* background: linear-gradient(323deg, rgb(15 27 60) 0%, rgb(8 8 8) 91%); */
+}
+
+#about-overlay {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+#about-header-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  color: white;
+}
+
+#about-header-container h1 {
+  color: white;
+  font-size: 68px;
+}
+
+#about-main-box-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.date-line {
+  min-height: 40px;
+  padding: 10px;
+  border-bottom: 1px solid white;
+}
+
+#about-main-box {
+  position: relative;
+  width: 80%;
+  background-color: rgb(0, 0, 0);
+  padding: 1px;
+  /* border: 1px solid white; */
+  /* display: flex; */
+  box-shadow: 0 8px 16px 0 rgba(18, 11, 83, 0.2);
+}
+
+#self-image-container {
+  flex: 1;
+}
+
+#bio-container {
+  margin: 20px;
+  color: white;
+  flex: 2;
+  font-size: 20px;
+  font-weight: 200;
+  font-family: 'Nunito', sans-serif;
+}
+
+#self-image {
+  border-radius: 350px;
+  border: 2px solid rgb(19, 30, 90);
+  width: 80%;
+  margin: 20px;
+}
+
+#home-main-box #dates h3 {
+  text-align: center;
+}
+
+#home-main-box #past-dates {
+  margin-top: 50px;
+}
+
+#home-main-box #dates {
+  top: 1px;
+  left: 1px;
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  opacity: 0.9;
+  background-color: rgb(0, 0, 0);
+  background: linear-gradient(160deg, rgb(8 23 53) 0%, rgb(0 0 0) 91%);
+  padding: 6px;
+  position: absolute;
+  color: white;
+}
+
+#home-main-box img {
+  width: 100%;
+}
+
+#shapes-container {
+  position: absolute;
+  right: 0px;
+  top: 200px;
+  width: 40%;
+}
+
+#shapes-left-container {
+  position: absolute;
+  left: -38px;
+  top: 200px;
+  width: 40%;
+}
+
+.venue-link {
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (min-width: 600px) {
+  #about-main-box {
+    display: flex;
+  }
+
+  #self-image-container {
+    flex: 1;
+    /* margin: 20px 20px 0px 20px; */
+  }
+
+  #bio-container {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #self-image-container {
+    flex: 3;
+  }
+
+  #bio-container {
+    flex: 7;
+  }
+}

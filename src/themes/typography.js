@@ -50,6 +50,7 @@ const Typography = () => ({
   },
   body1: {
     fontSize: '0.875rem',
+    fontWeight: 100,
     lineHeight: 1.57,
     fontFamily: "'Baumans', sans-serif"
   },

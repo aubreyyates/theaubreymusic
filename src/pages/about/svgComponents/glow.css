@@ -1,0 +1,46 @@
+@keyframes glowing {
+  0%,
+  100% {
+    fill-opacity: 0.07;
+  }
+  50% {
+    fill-opacity: 0.3; /* Adjust the peak opacity as needed */
+  }
+}
+
+@keyframes glowing2 {
+  0%,
+  100% {
+    fill-opacity: 0.07;
+  }
+  50% {
+    fill-opacity: 0.35; /* Adjust the peak opacity as needed */
+  }
+}
+
+@keyframes glowing3 {
+  0%,
+  100% {
+    fill-opacity: 0.05;
+  }
+  50% {
+    fill-opacity: 0.7; /* Adjust the peak opacity as needed */
+  }
+}
+
+.glow-1 {
+  animation: glowing 5s infinite; /* Adjust the duration as needed */
+}
+.glow-2 {
+  animation: glowing 8s infinite; /* Adjust the duration as needed */
+}
+.glow-3 {
+  animation: glowing 7s infinite; /* Adjust the duration as needed */
+}
+
+.glow-5 {
+  animation: glowing2 5s infinite; /* Adjust the duration as needed */
+}
+.glow-6 {
+  animation: glowing3 5s infinite; /* Adjust the duration as needed */
+}

@@ -3,11 +3,13 @@ import { HomeOutlined } from '@ant-design/icons';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import InfoIcon from '@mui/icons-material/Info';
 
 // icons
 const icons = {
   HomeOutlined,
   MusicNoteIcon,
+  InfoIcon,
   CalendarMonthIcon,
   PhoneIcon
 };
@@ -33,6 +35,13 @@ const pages = {
       type: 'item',
       url: '/music',
       icon: icons.MusicNoteIcon
+    },
+    {
+      id: 'about',
+      title: 'About',
+      type: 'item',
+      url: '/about',
+      icon: icons.InfoIcon
     }
     // {
     //   id: 'dates',

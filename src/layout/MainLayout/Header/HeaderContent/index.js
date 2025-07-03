@@ -28,6 +28,9 @@ const HeaderContent = () => {
             <Button component={LinkReact} to="music">
               Music
             </Button>
+            <Button component={LinkReact} to="about">
+              About
+            </Button>
             {/* <Button component={LinkReact} to="dates">
               Dates
             </Button> */}
