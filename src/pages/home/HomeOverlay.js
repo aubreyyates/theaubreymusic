@@ -9,7 +9,8 @@ import ShapesLeft from './svgComponents/shapesLeft';
 
 let upcomingDates = [
   { text: `Elray's Live and Dive (Iowa, City, IA) 10/11/2025 8:00 PM - 9:30 PM`, link: `https://www.elraysliveanddive.com/` },
-  { text: `Short's Burgers Eastside (Iowa City, IA) 09/27/2025 7:00 PM - 8:30 PM`, link: `https://shortsburger.com/` }
+  { text: `Willow Creek Theatre (Iowa City, IA) 10/03/2025 8:00 PM - 10:00 PM`, link: `https://willowcreektheatre.org/` },
+  { text: `Short's Burgers Eastside (Iowa City, IA) 09/27/2025 6:30 PM - 8:30 PM`, link: `https://shortsburger.com/` }
 ];
 
 let pastDates = [
