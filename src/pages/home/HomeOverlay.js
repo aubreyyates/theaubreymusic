@@ -8,13 +8,13 @@ import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
 let upcomingDates = [
-  { text: `The Sanctuary Pub (Iowa City, IA) 12/12/2025 7:00 PM - 8:30 PM`, link: `https://www.facebook.com/sanctuarypubiowacity/` },
-  { text: `Willow Creek Theatre (Iowa City, IA) 11/28/2025 8:00 PM`, link: `https://willowcreektheatre.org/` },
-  { text: `Elray's Live and Dive (Iowa, City, IA) 11/21/2025 8:00 PM - 9:30 PM`, link: `https://www.elraysliveanddive.com/` },
-  { text: `Short's Burgers Eastside (Iowa, City, IA) 11/20/2025 6:00 PM - 7:30 PM`, link: `https://www.facebook.com/shortseastside/` }
+  { text: `The Sanctuary Pub (Iowa City, IA) 12/12/2025 7:00 PM - 8:30 PM`, link: `https://www.facebook.com/sanctuarypubiowacity/` }
 ];
 
 let pastDates = [
+  `Willow Creek Theatre (Iowa City, IA) 11/28/2025`,
+  `Elray's Live and Dive (Iowa, City, IA) 11/21/2025`,
+  `Short's Burgers Eastside (Iowa, City, IA) 11/20/2025`,
   `Short's Burgers Eastside (Iowa, City, IA) 11/01/2025`,
   `Willow Creek Theatre (Iowa, City, IA) 10/24/2025`,
   `Short's Burgers Eastside (Iowa, City, IA) 10/23/2025`,
