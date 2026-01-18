@@ -3,7 +3,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   background-image: url('star-image-2.png');
   border-bottom: 1px solid white;
 }

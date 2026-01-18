@@ -1,11 +1,11 @@
 import CustomAudioPlayer from './CustomAudioPlayer';
 import './MusicPlayer.css';
+import audioFile from './audio/Give-You-The-Reason.mp3';
 
 const MusicPlayer = () => {
   return (
     <div id="music-player">
-      <div id="music-player-main">{/* <h1>Music</h1> */}</div>
-      <CustomAudioPlayer src="./audio/Give-You-The-Reason.mp3" title="My Song" />
+      <CustomAudioPlayer src={audioFile} title="My Song" />
     </div>
   );
 };

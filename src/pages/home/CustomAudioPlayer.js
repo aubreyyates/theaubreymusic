@@ -1,4 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+import './CustomAudioPlayer.css';
+import playButtonSvg from './svg/play-button.svg';
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return '0:00';
@@ -22,10 +25,21 @@ export default function CustomAudioPlayer({ src, title = 'Track' }) {
     return Math.min(100, Math.max(0, (currentTime / duration) * 100));
   }, [currentTime, duration]);
 
+  // Update audio source when src prop changes
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio || !src) return;
+
+    audio.src = src;
+    audio.load();
+    setIsReady(false);
+    setCurrentTime(0);
+    setDuration(0);
+  }, [src]);
+
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
-    setIsReady(true);
 
     const onLoadedMetadata = () => {
       setDuration(audio.duration || 0);
@@ -59,7 +73,7 @@ export default function CustomAudioPlayer({ src, title = 'Track' }) {
       audio.removeEventListener('ended', onEnded);
       audio.removeEventListener('volumechange', onVolumeChange);
     };
-  }, [src]);
+  }, []);
 
   const togglePlay = async () => {
     const audio = audioRef.current;
@@ -104,66 +118,43 @@ export default function CustomAudioPlayer({ src, title = 'Track' }) {
     if (v > 0 && audio.muted) audio.muted = false;
   };
 
-  const toggleMute = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.muted = !audio.muted;
-  };
-
-  const skip = (seconds) => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.currentTime = Math.min(duration || Infinity, Math.max(0, audio.currentTime + seconds));
-  };
-
   return (
-    <div style={styles.player}>
+    <div className="player">
       {/* Hidden native element (no default controls) */}
+      <div id="music-player-main-container">
+        <div id="music-player-main"></div>
+      </div>
+      <button onClick={togglePlay} disabled={!isReady} className="play-button-svg" aria-label={isPlaying ? 'Pause' : 'Play'}>
+        <img src={playButtonSvg} alt={isPlaying ? 'Pause' : 'Play'} />
+      </button>
       <audio
-        controls
         ref={audioRef}
-        onError={() => {
-          console.log('error loading audio.');
+        preload="metadata"
+        onError={(e) => {
+          console.error('Error loading audio:', e);
         }}
       >
-        <source src="../audio/Give-You-The-Reason.mp3" />
-        <track kind="captions" src="/captions/song.vtt" srcLang="en" label="English" />
+        <track kind="captions" />
       </audio>
 
-      <div style={styles.header}>
-        <div style={styles.title}>{title}</div>
-        <div style={styles.time}>
+      <div className="header">
+        <div className="title">{title}</div>
+        <div className="time">
           {formatTime(currentTime)} / {formatTime(duration)}
         </div>
       </div>
 
-      <div style={styles.controls}>
-        <button onClick={() => skip(-10)} disabled={!isReady} style={styles.btn}>
-          -10s
-        </button>
-
-        <button onClick={togglePlay} disabled={!isReady} style={styles.btnPrimary}>
-          {isPlaying ? 'Pause' : 'Play'}
-        </button>
-
-        <button onClick={() => skip(10)} disabled={!isReady} style={styles.btn}>
-          +10s
-        </button>
-
-        <button onClick={toggleMute} disabled={!isReady} style={styles.btn}>
-          {isMuted ? 'Unmute' : 'Mute'}
-        </button>
-
-        <div style={styles.volumeWrap}>
-          <span style={{ fontSize: 12 }}>Vol</span>
+      <div className="controls">
+        <div className="volumeWrap">
+          <span className="volumeLabel">Vol</span>
           <input type="range" min="0" max="1" step="0.01" value={isMuted ? 0 : volume} onChange={onVolumeChange} disabled={!isReady} />
         </div>
       </div>
 
       {/* Progress UI (clickable bar + optional range slider for accessibility) */}
-      <div style={styles.progressRow}>
+      <div className="progressRow">
         <div
-          style={styles.progressBar}
+          className="progressBar"
           onClick={onProgressBarClick}
           role="button"
           tabIndex={0}
@@ -173,7 +164,7 @@ export default function CustomAudioPlayer({ src, title = 'Track' }) {
           }}
           aria-label="Seek"
         >
-          <div style={{ ...styles.progressFill, width: `${progressPercent}%` }} />
+          <div className="progressFill" style={{ width: `${progressPercent}%` }} />
         </div>
 
         <input
@@ -185,59 +176,14 @@ export default function CustomAudioPlayer({ src, title = 'Track' }) {
           onChange={onProgressChange}
           disabled={!isReady}
           aria-label="Playback position"
-          style={styles.progressRange}
+          className="progressRange"
         />
       </div>
     </div>
   );
 }
 
-const styles = {
-  player: {
-    maxWidth: 520,
-    border: '1px solid rgba(0,0,0,0.15)',
-    borderRadius: 12,
-    padding: 14,
-    fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Arial'
-  },
-  header: {
-    display: 'flex',
-    alignItems: 'baseline',
-    justifyContent: 'space-between',
-    gap: 10,
-    marginBottom: 10
-  },
-  title: { fontWeight: 700 },
-  time: { fontSize: 12, opacity: 0.8 },
-  controls: { display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' },
-  btn: {
-    padding: '8px 10px',
-    borderRadius: 10,
-    border: '1px solid rgba(0,0,0,0.2)',
-    background: 'white',
-    cursor: 'pointer'
-  },
-  btnPrimary: {
-    padding: '8px 14px',
-    borderRadius: 10,
-    border: '1px solid rgba(0,0,0,0.2)',
-    background: 'white',
-    fontWeight: 700,
-    cursor: 'pointer'
-  },
-  volumeWrap: { display: 'flex', alignItems: 'center', gap: 6 },
-  progressRow: { marginTop: 12, display: 'grid', gap: 8 },
-  progressBar: {
-    height: 10,
-    borderRadius: 999,
-    background: 'rgba(0,0,0,0.1)',
-    overflow: 'hidden',
-    cursor: 'pointer'
-  },
-  progressFill: {
-    height: '100%',
-    borderRadius: 999,
-    background: 'rgba(0,0,0,0.45)'
-  },
-  progressRange: { width: '100%' }
+CustomAudioPlayer.propTypes = {
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string
 };
