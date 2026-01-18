@@ -1,0 +1,21 @@
+#music-player {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('star-image-2.png');
+  border-bottom: 1px solid white;
+}
+
+#music-player-main {
+  box-shadow: 0 10px 30px rgba(13, 19, 102, 0.7);
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+  border: 3px solid rgb(13, 19, 102);
+  background-image: url('profile-pic.jpg');
+  background-size: cover;
+}
