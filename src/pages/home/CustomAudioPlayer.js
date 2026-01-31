@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import './CustomAudioPlayer.css';
 import playButtonSvg from './svg/play-button.svg';
+import pauseButtonSvg from './svg/pause-button.svg';
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return '0:00';
@@ -118,6 +119,18 @@ export default function CustomAudioPlayer({ src, title = 'Track' }) {
     if (v > 0 && audio.muted) audio.muted = false;
   };
 
+  const volumePercent = isMuted ? 0 : Math.min(100, Math.max(0, volume * 100));
+
+  const onVolumeBarClick = (e) => {
+    const audio = audioRef.current;
+    if (!audio || !isReady) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const percent = (e.clientX - rect.left) / rect.width;
+    const v = Math.min(1, Math.max(0, percent));
+    audio.volume = v;
+    if (v > 0 && audio.muted) audio.muted = false;
+  };
+
   return (
     <div className="player">
       {/* Hidden native element (no default controls) */}
@@ -125,7 +138,7 @@ export default function CustomAudioPlayer({ src, title = 'Track' }) {
         <div id="music-player-main"></div>
       </div>
       <button onClick={togglePlay} disabled={!isReady} className="play-button-svg" aria-label={isPlaying ? 'Pause' : 'Play'}>
-        <img src={playButtonSvg} alt={isPlaying ? 'Pause' : 'Play'} />
+        <img src={isPlaying ? pauseButtonSvg : playButtonSvg} alt={isPlaying ? 'Pause' : 'Play'} />
       </button>
       <audio
         ref={audioRef}
@@ -144,10 +157,48 @@ export default function CustomAudioPlayer({ src, title = 'Track' }) {
         </div>
       </div>
 
-      <div className="controls">
+      {/* Volume: custom bar (like progressBar) just above progress row, left-aligned */}
+      <div className="volumeRow">
         <div className="volumeWrap">
-          <span className="volumeLabel">Vol</span>
-          <input type="range" min="0" max="1" step="0.01" value={isMuted ? 0 : volume} onChange={onVolumeChange} disabled={!isReady} />
+          {/* <span className="volumeLabel">Vol</span> */}
+          <div
+            className="volumeBar"
+            onClick={onVolumeBarClick}
+            role="slider"
+            tabIndex={0}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={volumePercent}
+            aria-label="Volume"
+            onKeyDown={(e) => {
+              if (!isReady) return;
+              const audio = audioRef.current;
+              if (!audio) return;
+              if (e.key === 'ArrowLeft') {
+                const v = Math.max(0, volume - 0.05);
+                audio.volume = v;
+                if (v > 0 && audio.muted) audio.muted = false;
+              }
+              if (e.key === 'ArrowRight') {
+                const v = Math.min(1, volume + 0.05);
+                audio.volume = v;
+                if (v > 0 && audio.muted) audio.muted = false;
+              }
+            }}
+          >
+            <div className="volumeFill" style={{ width: `${volumePercent}%` }} />
+          </div>
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={isMuted ? 0 : volume}
+            onChange={onVolumeChange}
+            disabled={!isReady}
+            aria-label="Volume"
+            className="volumeRange"
+          />
         </div>
       </div>
 

@@ -9,7 +9,7 @@ function LoadingScreen() {
       <div id="loading-bar-2" className="loading-bar"></div>
       <div id="loading-bar-3" className="loading-bar"></div>
       <div id="loading-bar-4" className="loading-bar"></div>
-      <div id="loading-name">Aubrey</div>
+      {/* <div id="loading-name">Aubrey</div> */}
     </div>
   );
 }
