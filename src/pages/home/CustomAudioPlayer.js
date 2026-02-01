@@ -11,9 +11,17 @@ function formatTime(seconds) {
   return `${m}:${String(s).padStart(2, '0')}`;
 }
 
-export default function CustomAudioPlayer({ src, title = 'Track' }) {
-  const audioRef = useRef(null);
+function normalizeTracks(tracks, src, title) {
+  if (tracks && tracks.length > 0) return tracks;
+  if (src) return [{ src, title: title || 'Track' }];
+  return [];
+}
 
+export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracksProp }) {
+  const audioRef = useRef(null);
+  const tracks = useMemo(() => normalizeTracks(tracksProp, src, title), [tracksProp, src, title]);
+
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isReady, setIsReady] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -21,22 +29,36 @@ export default function CustomAudioPlayer({ src, title = 'Track' }) {
   const [volume, setVolume] = useState(1);
   const [isMuted, setIsMuted] = useState(false);
 
+  const currentTrack = tracks[currentTrackIndex] ?? null;
+  const effectiveSrc = currentTrack?.src ?? null;
+  const effectiveTitle = currentTrack?.title ?? title;
+
   const progressPercent = useMemo(() => {
     if (!duration) return 0;
     return Math.min(100, Math.max(0, (currentTime / duration) * 100));
   }, [currentTime, duration]);
 
-  // Update audio source when src prop changes
+  const goToPrev = () => {
+    if (tracks.length <= 1) return;
+    setCurrentTrackIndex((i) => (i - 1 + tracks.length) % tracks.length);
+  };
+
+  const goToNext = () => {
+    if (tracks.length <= 1) return;
+    setCurrentTrackIndex((i) => (i + 1) % tracks.length);
+  };
+
+  // Update audio source when effective src changes
   useEffect(() => {
     const audio = audioRef.current;
-    if (!audio || !src) return;
+    if (!audio || !effectiveSrc) return;
 
-    audio.src = src;
+    audio.src = effectiveSrc;
     audio.load();
     setIsReady(false);
     setCurrentTime(0);
     setDuration(0);
-  }, [src]);
+  }, [effectiveSrc]);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -134,8 +156,27 @@ export default function CustomAudioPlayer({ src, title = 'Track' }) {
   return (
     <div className="player">
       {/* Hidden native element (no default controls) */}
+      <div className="trackTitle">{effectiveTitle}</div>
       <div id="music-player-main-container">
+        <button
+          type="button"
+          className="trackNavButton trackNavPrev"
+          onClick={goToPrev}
+          disabled={tracks.length <= 1}
+          aria-label="Previous track"
+        >
+          ‹
+        </button>
         <div id="music-player-main"></div>
+        <button
+          type="button"
+          className="trackNavButton trackNavNext"
+          onClick={goToNext}
+          disabled={tracks.length <= 1}
+          aria-label="Next track"
+        >
+          ›
+        </button>
       </div>
       <button onClick={togglePlay} disabled={!isReady} className="play-button-svg" aria-label={isPlaying ? 'Pause' : 'Play'}>
         <img src={isPlaying ? pauseButtonSvg : playButtonSvg} alt={isPlaying ? 'Pause' : 'Play'} />
@@ -235,6 +276,12 @@ export default function CustomAudioPlayer({ src, title = 'Track' }) {
 }
 
 CustomAudioPlayer.propTypes = {
-  src: PropTypes.string.isRequired,
-  title: PropTypes.string
+  src: PropTypes.string,
+  title: PropTypes.string,
+  tracks: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      title: PropTypes.string
+    })
+  )
 };

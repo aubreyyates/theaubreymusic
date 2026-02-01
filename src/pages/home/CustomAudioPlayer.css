@@ -6,6 +6,21 @@
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
+.trackTitle {
+  text-align: center;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 12px;
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .trackTitle {
+    font-size: 4rem;
+  }
+}
+
 .header {
   display: flex;
   align-items: baseline;
@@ -140,6 +155,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 16px;
+}
+
+.trackNavButton {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  font-size: 6rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.trackNavButton:hover:not(:disabled) {
+  background: rgba(13, 19, 102, 0.1);
+  transform: scale(1.1);
+}
+
+.trackNavButton:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.trackNavButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
 }
 
 .play-button-svg {

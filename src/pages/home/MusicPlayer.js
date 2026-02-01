@@ -1,11 +1,17 @@
 import CustomAudioPlayer from './CustomAudioPlayer';
 import './MusicPlayer.css';
-import audioFile from './audio/Give-You-The-Reason.mp3';
+import giveYouTheReason from './audio/Give-You-The-Reason.mp3';
+import brightestLight from './audio/Brightest-Light.mp3';
+
+const TRACKS = [
+  { src: giveYouTheReason, title: 'Give You The Reason' },
+  { src: brightestLight, title: 'Brightest Light' }
+];
 
 const MusicPlayer = () => {
   return (
     <div id="music-player">
-      <CustomAudioPlayer src={audioFile} title="My Song" />
+      <CustomAudioPlayer tracks={TRACKS} />
     </div>
   );
 };
