@@ -196,13 +196,26 @@
   opacity: 0.35;
 }
 
+.play-button-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.play-button-label {
+  margin-top: 20px;
+  color: white;
+  font-size: 1.2rem;
+  opacity: 1;
+}
+
 .play-button-svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px auto;
+  margin: 0;
   margin-bottom: 10px;
-  margin-top: 40px;
   background: none;
   border: none;
   cursor: pointer;
