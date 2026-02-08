@@ -23,7 +23,7 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
   const tracks = useMemo(() => normalizeTracks(tracksProp, src, title), [tracksProp, src, title]);
 
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
-  const [hasUserPlayed, setHasUserPlayed] = useState(false);
+  // const [hasUserPlayed, setHasUserPlayed] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -108,7 +108,7 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
 
     try {
       if (audio.paused) {
-        setHasUserPlayed(true);
+        // setHasUserPlayed(true);
         await audio.play(); // may reject if browser blocks autoplay
       } else {
         audio.pause();
@@ -187,12 +187,12 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
         </div>
       </div>
       <div className="play-button-wrap">
-        <span className="play-button-label" style={{ opacity: hasUserPlayed ? 0 : 1 }}>
-          Press To Play Song
-        </span>
-        <button onClick={togglePlay} disabled={!isReady} className="play-button-svg" aria-label={isPlaying ? 'Pause' : 'Play'}>
-          <img src={isPlaying ? pauseButtonSvg : playButtonSvg} alt={isPlaying ? 'Pause' : 'Play'} />
-        </button>
+        <div className="play-button-box">
+          <span className="play-button-label">{isPlaying ? 'Press To Pause Song' : 'Press To Play Song'}</span>
+          <button onClick={togglePlay} disabled={!isReady} className="play-button-svg" aria-label={isPlaying ? 'Pause' : 'Play'}>
+            <img src={isPlaying ? pauseButtonSvg : playButtonSvg} alt={isPlaying ? 'Pause' : 'Play'} />
+          </button>
+        </div>
       </div>
       <audio
         ref={audioRef}
