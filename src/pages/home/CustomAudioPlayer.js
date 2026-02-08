@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './CustomAudioPlayer.css';
 import playButtonSvg from './svg/play-button.svg';
 import pauseButtonSvg from './svg/pause-button.svg';
-import hexSvg from './svg/hex.svg';
+// import hexSvg from './svg/hex.svg';
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return '0:00';
@@ -162,35 +162,29 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
       {/* Hidden native element (no default controls) */}
       <div className="trackTitle">{effectiveTitle}</div>
       <div id="music-player-main-container">
-        <button
-          type="button"
-          className="trackNavButton trackNavPrev"
-          onClick={goToPrev}
-          disabled={tracks.length <= 1}
-          aria-label="Previous track"
-        >
-          ‹
-        </button>
+        <div className="trackNavBox trackNavPrev">
+          <span className="trackNavBox-label">Prev Track</span>
+          <button type="button" className="trackNavButton" onClick={goToPrev} disabled={tracks.length <= 1} aria-label="Previous track">
+            ‹
+          </button>
+        </div>
         <div className="profile-pic-orbit-wrap">
-          <div className="hex-orbit" aria-hidden="true">
-            <img src={hexSvg} className="hex-orbit-item hex-orbit-item-1" alt="" />
+          <div className={`hex-orbit ${isPlaying ? 'hex-orbit--playing' : ''}`} aria-hidden="true">
+            {/* <img src={hexSvg} className="hex-orbit-item hex-orbit-item-1" alt="" />
             <img src={hexSvg} className="hex-orbit-item hex-orbit-item-2" alt="" />
             <img src={hexSvg} className="hex-orbit-item hex-orbit-item-3" alt="" />
             <img src={hexSvg} className="hex-orbit-item hex-orbit-item-4" alt="" />
             <img src={hexSvg} className="hex-orbit-item hex-orbit-item-5" alt="" />
-            <img src={hexSvg} className="hex-orbit-item hex-orbit-item-6" alt="" />
+            <img src={hexSvg} className="hex-orbit-item hex-orbit-item-6" alt="" /> */}
           </div>
           <div id="profile-pic-main"></div>
         </div>
-        <button
-          type="button"
-          className="trackNavButton trackNavNext"
-          onClick={goToNext}
-          disabled={tracks.length <= 1}
-          aria-label="Next track"
-        >
-          ›
-        </button>
+        <div className="trackNavBox trackNavNext">
+          <span className="trackNavBox-label">Next Track</span>
+          <button type="button" className="trackNavButton" onClick={goToNext} disabled={tracks.length <= 1} aria-label="Next track">
+            ›
+          </button>
+        </div>
       </div>
       <div className="play-button-wrap">
         <span className="play-button-label" style={{ opacity: hasUserPlayed ? 0 : 1 }}>
