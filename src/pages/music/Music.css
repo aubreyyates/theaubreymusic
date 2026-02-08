@@ -4,6 +4,10 @@
   color: white;
 }
 
+#standard-music-player-container {
+  margin-top: 100px;
+}
+
 .page-title {
   width: 100%;
   text-align: center;

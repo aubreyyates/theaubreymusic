@@ -2,7 +2,15 @@
 import { Grid } from '@mui/material';
 // import VerticalBars from 'components/VerticalBars';
 
+import giveYouTheReason from '../home/audio/Give-You-The-Reason.mp3';
+import brightestLight from '../home/audio/Brightest-Light.mp3';
+
 import './Music.css';
+
+const TRACKS = [
+  { src: giveYouTheReason, title: 'Give You The Reason' },
+  { src: brightestLight, title: 'Brightest Light' }
+];
 
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
@@ -11,35 +19,17 @@ const Music = () => {
     <Grid>
       <Grid style={{ height: '800px', position: 'relative' }}>
         <div id="music-container">
-          <div className="page-title">
-            <h1>Live Videos</h1>
-          </div>
-          <div className="video-container">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/z0_UN9rqWG8?si=TXQriutUWK3TOPqF"
-              title="YouTube video player"
-              // frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              // referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div className="video-container">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/uWiw2-wIn2s?si=mL-evbfYkD-AP8YY"
-              title="YouTube video player"
-              // frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              // referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+          <div id="standard-music-player-container">
+            {TRACKS.map((track) => (
+              <div key={track.title} style={{ marginBottom: 50, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ marginBottom: 4, fontWeight: 600 }}>{track.title}</div>
+                <audio controls src={track.src} preload="metadata" style={{ width: '100%', maxWidth: 400 }}>
+                  <track kind="captions" />
+                </audio>
+              </div>
+            ))}
           </div>
         </div>
-        {/* <VerticalBars /> */}
       </Grid>
     </Grid>
   );

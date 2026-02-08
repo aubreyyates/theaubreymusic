@@ -56,6 +56,7 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
     audio.src = effectiveSrc;
     audio.load();
     setIsReady(false);
+    setIsPlaying(false);
     setCurrentTime(0);
     setDuration(0);
   }, [effectiveSrc]);
@@ -199,6 +200,7 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
       </div>
 
       {/* Volume: custom bar (like progressBar) just above progress row, left-aligned */}
+      <div className="volumeLabel">Volume</div>
       <div className="volumeRow">
         <div className="volumeWrap">
           {/* <span className="volumeLabel">Vol</span> */}
@@ -244,6 +246,7 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
       </div>
 
       {/* Progress UI (clickable bar + optional range slider for accessibility) */}
+      <div className="progressLabel">Progress</div>
       <div className="progressRow">
         <div
           className="progressBar"
