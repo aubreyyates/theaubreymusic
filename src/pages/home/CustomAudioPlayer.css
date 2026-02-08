@@ -161,7 +161,7 @@
 }
 
 .hex-orbit {
-  --hex-orbit-radius: 180px;
+  --hex-orbit-radius: 136px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -191,16 +191,37 @@
   transform: translate(-50%, -50%);
 }
 
-/* .hex-orbit-item-1 {
-  transform: translate(-50%, -50%) translateY(calc(-1 * var(--hex-orbit-radius, 180px)));
-} */
+/* 6 hexes at 0°, 60°, 120°, 180°, 240°, 300° (360/6 = 60° apart) */
+.hex-orbit-item-1 {
+  transform: translate(-50%, -50%) rotate(0deg) translateY(calc(-1 * var(--hex-orbit-radius, 180px)));
+}
 
 .hex-orbit-item-2 {
-  transform: translate(-50%, -50%) rotate(120deg) translateY(calc(-1 * var(--hex-orbit-radius, 180px)));
+  transform: translate(-50%, -50%) rotate(60deg) translateY(calc(-1 * var(--hex-orbit-radius, 180px)));
 }
 
 .hex-orbit-item-3 {
+  transform: translate(-50%, -50%) rotate(120deg) translateY(calc(-1 * var(--hex-orbit-radius, 180px)));
+}
+
+.hex-orbit-item-4 {
+  transform: translate(-50%, -50%) rotate(180deg) translateY(calc(-1 * var(--hex-orbit-radius, 180px)));
+}
+
+.hex-orbit-item-5 {
   transform: translate(-50%, -50%) rotate(240deg) translateY(calc(-1 * var(--hex-orbit-radius, 180px)));
+}
+
+.hex-orbit-item-6 {
+  transform: translate(-50%, -50%) rotate(300deg) translateY(calc(-1 * var(--hex-orbit-radius, 180px)));
+}
+
+#music-player-main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 @media (min-width: 768px) {
@@ -219,25 +240,33 @@
     --hex-orbit-radius: 215px;
   }
 
-  /* .hex-orbit-item-1 {
-    transform: translate(-50%, -50%) translateY(calc(-1 * var(--hex-orbit-radius)));
-  } */
+  .hex-orbit-item-1 {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(calc(-1 * var(--hex-orbit-radius)));
+  }
 
   .hex-orbit-item-2 {
-    transform: translate(-50%, -50%) rotate(120deg) translateY(calc(-1 * var(--hex-orbit-radius)));
+    transform: translate(-50%, -50%) rotate(60deg) translateY(calc(-1 * var(--hex-orbit-radius)));
   }
 
   .hex-orbit-item-3 {
+    transform: translate(-50%, -50%) rotate(120deg) translateY(calc(-1 * var(--hex-orbit-radius)));
+  }
+
+  .hex-orbit-item-4 {
+    transform: translate(-50%, -50%) rotate(180deg) translateY(calc(-1 * var(--hex-orbit-radius)));
+  }
+
+  .hex-orbit-item-5 {
     transform: translate(-50%, -50%) rotate(240deg) translateY(calc(-1 * var(--hex-orbit-radius)));
   }
-}
 
-#music-player-main-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  .hex-orbit-item-6 {
+    transform: translate(-50%, -50%) rotate(300deg) translateY(calc(-1 * var(--hex-orbit-radius)));
+  }
+
+  #music-player-main-container {
+    gap: 120px;
+  }
 }
 
 .trackNavButton {

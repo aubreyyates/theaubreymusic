@@ -176,6 +176,9 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
             <img src={hexSvg} className="hex-orbit-item hex-orbit-item-1" alt="" />
             <img src={hexSvg} className="hex-orbit-item hex-orbit-item-2" alt="" />
             <img src={hexSvg} className="hex-orbit-item hex-orbit-item-3" alt="" />
+            <img src={hexSvg} className="hex-orbit-item hex-orbit-item-4" alt="" />
+            <img src={hexSvg} className="hex-orbit-item hex-orbit-item-5" alt="" />
+            <img src={hexSvg} className="hex-orbit-item hex-orbit-item-6" alt="" />
           </div>
           <div id="profile-pic-main"></div>
         </div>
