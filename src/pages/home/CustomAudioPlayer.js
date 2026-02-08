@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './CustomAudioPlayer.css';
 import playButtonSvg from './svg/play-button.svg';
 import pauseButtonSvg from './svg/pause-button.svg';
+import hexSvg from './svg/hex.svg';
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return '0:00';
@@ -170,7 +171,14 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
         >
           ‹
         </button>
-        <div id="music-player-main"></div>
+        <div className="profile-pic-orbit-wrap">
+          <div className="hex-orbit" aria-hidden="true">
+            <img src={hexSvg} className="hex-orbit-item hex-orbit-item-1" alt="" />
+            <img src={hexSvg} className="hex-orbit-item hex-orbit-item-2" alt="" />
+            <img src={hexSvg} className="hex-orbit-item hex-orbit-item-3" alt="" />
+          </div>
+          <div id="profile-pic-main"></div>
+        </div>
         <button
           type="button"
           className="trackNavButton trackNavNext"
@@ -182,7 +190,9 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
         </button>
       </div>
       <div className="play-button-wrap">
-        <span className="play-button-label" style={{ opacity: hasUserPlayed ? 0 : 1 }}>Press To Play Song</span>
+        <span className="play-button-label" style={{ opacity: hasUserPlayed ? 0 : 1 }}>
+          Press To Play Song
+        </span>
         <button onClick={togglePlay} disabled={!isReady} className="play-button-svg" aria-label={isPlaying ? 'Pause' : 'Play'}>
           <img src={isPlaying ? pauseButtonSvg : playButtonSvg} alt={isPlaying ? 'Pause' : 'Play'} />
         </button>
