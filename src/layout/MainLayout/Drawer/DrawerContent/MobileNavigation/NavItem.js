@@ -108,7 +108,8 @@ const NavItem = ({ item, level, setOpen }) => {
 
 NavItem.propTypes = {
   item: PropTypes.object,
-  level: PropTypes.number
+  level: PropTypes.number,
+  setOpen: PropTypes.func.isRequired
 };
 
 export default NavItem;

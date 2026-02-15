@@ -1,5 +1,6 @@
 // material-ui
 import { Box, Typography } from '@mui/material';
+import PropTypes from 'prop-types';
 
 // project import
 import NavGroup from './NavGroup';
@@ -22,6 +23,10 @@ const MobileNavigation = ({ setOpen }) => {
   });
 
   return <Box sx={{ pt: 2, width: '100%' }}>{navGroups}</Box>;
+};
+
+MobileNavigation.propTypes = {
+  setOpen: PropTypes.func.isRequired
 };
 
 export default MobileNavigation;

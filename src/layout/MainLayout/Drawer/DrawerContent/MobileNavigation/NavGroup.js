@@ -53,7 +53,8 @@ const NavGroup = ({ item: item, setOpen: setOpen }) => {
 };
 
 NavGroup.propTypes = {
-  item: PropTypes.object
+  item: PropTypes.object,
+  setOpen: PropTypes.func.isRequired
 };
 
 export default NavGroup;

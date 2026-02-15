@@ -4,8 +4,8 @@ import giveYouTheReason from './audio/Give-You-The-Reason.mp3';
 import brightestLight from './audio/Brightest-Light.mp3';
 
 const TRACKS = [
-  { src: giveYouTheReason, title: 'Give You The Reason' },
-  { src: brightestLight, title: 'Brightest Light' }
+  { src: giveYouTheReason, title: 'Give You The Reason (unmastered demo)' },
+  { src: brightestLight, title: 'Brightest Light (unmastered demo)' }
 ];
 
 const MusicPlayer = () => {
