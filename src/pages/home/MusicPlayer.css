@@ -6,6 +6,9 @@
   justify-content: center;
   align-items: flex-end;
   background-image: url('star-image-2.png');
+  /* background-image: url('star-image-4.jpg'); */
+  /* background-image: url('star-image-5.png'); */
+  /* background-size: cover; */
   border-bottom: 1px solid white;
 }
 

@@ -197,6 +197,24 @@
   transform: translate(-50%, -50%);
 }
 
+.trackNavButton {
+  flex-shrink: 0;
+  margin-bottom: 30px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  font-size: 6rem;
+  line-height: 1;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
 /* 6 hexes at 0°, 60°, 120°, 180°, 240°, 300° (360/6 = 60° apart) */
 .hex-orbit-item-1 {
   transform: translate(-50%, -50%) rotate(0deg) translateY(calc(-1 * var(--hex-orbit-radius, 180px)));
@@ -251,13 +269,46 @@
   margin-left: auto;
 }
 
+.trackNavBox--mobile {
+  display: none;
+}
+
+.play-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .trackNavBox-label {
   font-size: 0.85rem;
   font-weight: 600;
   color: black;
 }
 
+@media (max-width: 767px) {
+  #music-player-main-container .trackNavBox--desktop {
+    display: none;
+  }
+
+  .trackNavBox--mobile {
+    display: flex;
+  }
+
+  .play-row {
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 @media (min-width: 768px) {
+  .trackNavButton {
+    flex-shrink: 0;
+    margin-bottom: 20px;
+  }
+
   .profile-pic-orbit-wrap {
     width: 400px;
     height: 400px;
@@ -301,24 +352,6 @@
   #music-player-main-container {
     gap: 120px;
   }
-}
-
-.trackNavButton {
-  flex-shrink: 0;
-  margin-bottom: 20px;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  border-radius: 50%;
-  font-size: 6rem;
-  line-height: 1;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .trackNavButton:hover:not(:disabled) {
@@ -368,6 +401,8 @@
   justify-content: center;
   align-items: center;
   margin: 0;
+  margin-left: 30px;
+  margin-right: 30px;
   margin-bottom: 10px;
   background: none;
   border: none;

@@ -162,7 +162,7 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
       {/* Hidden native element (no default controls) */}
       <div className="trackTitle">{effectiveTitle}</div>
       <div id="music-player-main-container">
-        <div className="trackNavBox trackNavPrev">
+        <div className="trackNavBox trackNavPrev trackNavBox--desktop">
           <span className="trackNavBox-label">Prev Track</span>
           <button type="button" className="trackNavButton" onClick={goToPrev} disabled={tracks.length <= 1} aria-label="Previous track">
             ‹
@@ -179,7 +179,7 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
           </div>
           <div id="profile-pic-main"></div>
         </div>
-        <div className="trackNavBox trackNavNext">
+        <div className="trackNavBox trackNavNext trackNavBox--desktop">
           <span className="trackNavBox-label">Next Track</span>
           <button type="button" className="trackNavButton" onClick={goToNext} disabled={tracks.length <= 1} aria-label="Next track">
             ›
@@ -187,11 +187,25 @@ export default function CustomAudioPlayer({ src, title = 'Track', tracks: tracks
         </div>
       </div>
       <div className="play-button-wrap">
-        <div className="play-button-box">
-          <span className="play-button-label">{isPlaying ? 'Press To Pause Song' : 'Press To Play Song'}</span>
-          <button onClick={togglePlay} disabled={!isReady} className="play-button-svg" aria-label={isPlaying ? 'Pause' : 'Play'}>
-            <img src={isPlaying ? pauseButtonSvg : playButtonSvg} alt={isPlaying ? 'Pause' : 'Play'} />
-          </button>
+        <div className="play-row">
+          <div className="trackNavBox trackNavPrev trackNavBox--mobile">
+            <span className="trackNavBox-label">Prev Track</span>
+            <button type="button" className="trackNavButton" onClick={goToPrev} disabled={tracks.length <= 1} aria-label="Previous track">
+              ‹
+            </button>
+          </div>
+          <div className="play-button-box">
+            <span className="play-button-label">{isPlaying ? 'Press To Pause Song' : 'Press To Play Song'}</span>
+            <button onClick={togglePlay} disabled={!isReady} className="play-button-svg" aria-label={isPlaying ? 'Pause' : 'Play'}>
+              <img src={isPlaying ? pauseButtonSvg : playButtonSvg} alt={isPlaying ? 'Pause' : 'Play'} />
+            </button>
+          </div>
+          <div className="trackNavBox trackNavNext trackNavBox--mobile">
+            <span className="trackNavBox-label">Next Track</span>
+            <button type="button" className="trackNavButton" onClick={goToNext} disabled={tracks.length <= 1} aria-label="Next track">
+              ›
+            </button>
+          </div>
         </div>
       </div>
       <audio
