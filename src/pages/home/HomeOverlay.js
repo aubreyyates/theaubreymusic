@@ -7,11 +7,10 @@ import './HomeOverlay.css';
 import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
-let upcomingDates = [
-  { text: `Willow Creek Theatre (Iowa City, IA) 02/27/2026 8:00 PM - 10:00 PM`, link: `https://willowcreektheatre.org/` }
-];
+let upcomingDates = [];
 
 let pastDates = [
+  `Willow Creek Theatre (Iowa City, IA) 02/27/2026`,
   `Willow Creek Theatre (Iowa City, IA) 01/23/2026`,
   `The Sanctuary Pub (Iowa City, IA) 01/16/2026`,
   `Short's Burgers Eastside (Iowa, City, IA) 12/20/2025`,
