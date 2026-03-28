@@ -13,7 +13,7 @@ const Home = () => {
         <MusicPlayer></MusicPlayer>
       </div>
       <div id="home-container">
-        <Grid style={{ height: '2090px', position: 'relative' }}>
+        <Grid style={{ height: '2160px', position: 'relative' }}>
           <HomeOverlay></HomeOverlay>
         </Grid>
       </div>
