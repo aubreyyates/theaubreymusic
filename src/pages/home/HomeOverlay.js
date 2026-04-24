@@ -8,11 +8,13 @@ import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
 let upcomingDates = [
+  { text: `Short's Burgers Eastside (Iowa, City, IA) 05/14/2026 5:30 PM - 7:30 PM`, link: `https://www.facebook.com/shortseastside/` },
   { text: `Tavern Blue (Coralville, IA) 04/30/2026 6:00 PM - 8:00 PM`, link: `https://tavernblue.com/` },
-  { text: `Short's Burgers Eastside (Iowa, City, IA) 04/02/2026 5:30 PM - 7:30 PM`, link: `https://shortsburger.com/` }
+  { text: `Willow Creek Theatre (Iowa City, IA) (Iowa, City, IA) 04/42/2026 8:00 PM`, link: `https://willowcreektheatre.org/` }
 ];
 
 let pastDates = [
+  `Short's Burgers Eastside (Iowa, City, IA) 04/02/2026`,
   `Willow Creek Theatre (Iowa City, IA) 02/27/2026`,
   `Willow Creek Theatre (Iowa City, IA) 01/23/2026`,
   `The Sanctuary Pub (Iowa City, IA) 01/16/2026`,
