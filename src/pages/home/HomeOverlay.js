@@ -7,7 +7,7 @@ import './HomeOverlay.css';
 import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
-let upcomingDates = [];
+let upcomingDates = [{ text: `Willow Creek Theatre (Iowa City, IA) 06/26/2026 - 8:00 PM `, link: `https://willowcreektheatre.org/` }];
 
 let pastDates = [
   `Short's Burgers Eastside (Iowa, City, IA) 05/14/2026`,
