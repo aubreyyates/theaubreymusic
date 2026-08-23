@@ -7,7 +7,10 @@ import './HomeOverlay.css';
 import Shapes from './svgComponents/shapes';
 import ShapesLeft from './svgComponents/shapesLeft';
 
-let upcomingDates = [];
+let upcomingDates = [
+  { text: `Willow Creek Theatre (Iowa City, IA) 08/28/2026 8:00 PM`, link: `https://willowcreektheatre.org/` },
+  { text: `Short's Burgers Eastside (Iowa City, IA) 08/27/2026 5:30 PM - 7:30 PM`, link: `https://www.facebook.com/shortseastside/` }
+];
 
 let pastDates = [
   `Street Food Festival (Cedar Rapids, IA) 07/25/2026`,
@@ -71,7 +74,7 @@ const HomeOverlay = () => {
             <div id="home-main-box">
               <div id="dates">
                 <h3>Upcoming Dates</h3>
-                <div className="date-line">None. Check back later!</div>
+                {/* <div className="date-line">None. Check back later!</div> */}
                 {upcomingDates.map((item, index) => (
                   <div className="date-line" key={index}>
                     {item.text} -{' '}
