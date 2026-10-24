@@ -51,7 +51,6 @@
 
 #home-main-box #dates h3 {
   text-align: center;
-  margin: 8px 0 16px;
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -59,8 +58,14 @@
   color: rgba(190, 210, 255, 0.9);
 }
 
+#home-main-box #upcoming-dates {
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
 #home-main-box #past-dates {
-  margin-top: 36px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #home-main-box #dates {

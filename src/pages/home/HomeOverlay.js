@@ -73,7 +73,7 @@ const HomeOverlay = () => {
           <div id="home-main-box-container">
             <div id="home-main-box">
               <div id="dates">
-                <h3>Upcoming Dates</h3>
+                <h3 id="upcoming-dates">Upcoming Dates</h3>
                 <div className="date-line">None. Check back later!</div>
                 {upcomingDates.map((item, index) => (
                   <div className="date-line" key={index}>
