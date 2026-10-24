@@ -75,14 +75,16 @@
 #shapes-container {
   position: absolute;
   right: 0px;
-  top: 200px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 40%;
 }
 
 #shapes-left-container {
   position: absolute;
   left: -38px;
-  top: 200px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 40%;
 }
 
@@ -105,33 +107,5 @@
 
   #home-main-box #dates {
     padding: 12px 0px 22px;
-  }
-
-  #shapes-container {
-    top: 140px;
-  }
-
-  #shapes-left-container {
-    top: 140px;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  #shapes-container {
-    top: 100px;
-  }
-
-  #shapes-left-container {
-    top: 100px;
-  }
-}
-
-@media screen and (min-width: 1320px) {
-  #shapes-container {
-    top: 0px;
-  }
-
-  #shapes-left-container {
-    top: 0px;
   }
 }
