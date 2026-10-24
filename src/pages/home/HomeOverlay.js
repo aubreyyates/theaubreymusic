@@ -10,6 +10,7 @@ import ShapesLeft from './svgComponents/shapesLeft';
 let upcomingDates = [];
 
 let pastDates = [
+  `Test (Iowa City, IA) 10/23/2026`,
   `Short's Burgers Eastside (Iowa City, IA) 10/22/2026`,
   `Willow Creek Theatre (Iowa City, IA) 08/28/2026`,
   `Short's Burgers Eastside (Iowa City, IA) 08/27/2026`,
